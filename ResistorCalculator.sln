@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResistorCalculatorWeb", "ResistorCalculatorWeb\ResistorCalculatorWeb.csproj", "{19713237-A511-4AF2-8CAA-40C618DB1337}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C89D9783-27D7-447F-A062-0DF9D21F8413} = {C89D9783-27D7-447F-A062-0DF9D21F8413}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResistorCalculatorTests", "ResistorCalculatorWeb.Tests\ResistorCalculatorTests.csproj", "{27DA77F9-15BD-4866-A45B-AE9C309AADAA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C89D9783-27D7-447F-A062-0DF9D21F8413} = {C89D9783-27D7-447F-A062-0DF9D21F8413}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResistorCalculatorService", "ResistorCalulatorService\ResistorCalculatorService.csproj", "{C89D9783-27D7-447F-A062-0DF9D21F8413}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{03517E40-4995-4656-9C1F-28999EFDF74C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19713237-A511-4AF2-8CAA-40C618DB1337}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19713237-A511-4AF2-8CAA-40C618DB1337}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19713237-A511-4AF2-8CAA-40C618DB1337}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19713237-A511-4AF2-8CAA-40C618DB1337}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27DA77F9-15BD-4866-A45B-AE9C309AADAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27DA77F9-15BD-4866-A45B-AE9C309AADAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27DA77F9-15BD-4866-A45B-AE9C309AADAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27DA77F9-15BD-4866-A45B-AE9C309AADAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C89D9783-27D7-447F-A062-0DF9D21F8413}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C89D9783-27D7-447F-A062-0DF9D21F8413}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C89D9783-27D7-447F-A062-0DF9D21F8413}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C89D9783-27D7-447F-A062-0DF9D21F8413}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03517E40-4995-4656-9C1F-28999EFDF74C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03517E40-4995-4656-9C1F-28999EFDF74C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03517E40-4995-4656-9C1F-28999EFDF74C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03517E40-4995-4656-9C1F-28999EFDF74C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {41251ADB-1587-4A7A-8BFE-A2F5ACDDF487}
+	EndGlobalSection
+EndGlobal

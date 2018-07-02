@@ -1,0 +1,121 @@
+﻿@model List<ResistorCalculatorWeb.Models.Band>
+
+<h2>@ViewBag.Title</h2>
+
+<form method="post">
+    <div class="row">
+        <div class="col-md-6">
+            <input type="text" id="ID" name="ID" value="@ViewData["ID"]" hidden />
+
+            <div class="form-group">
+                <label for="Date" class="control-label">Date</label>
+                <input type="date" id="Date" name="Date" class="form-control" value="@ViewData["Date"]" />
+            </div>
+
+            <div class="form-group">
+                <label for="Band1" class="control-label">First Band Color</label>
+                <select id="Band1" name="Band1" class="form-control">
+                    @foreach (var band in Model)
+                    {
+                        if (band.Specification.SignificantFigures != null)
+                        {
+                            if (Convert.ToUInt32(ViewData["BandColor1ID"]) == band.ID)
+                            {
+                                <option id="Band1-@band.ID" value="@band.ID|@band.Specification.SignificantFigures" selected>@band.Specification.Color</option>
+                            }
+                            else
+                            {
+                                <option id="Band1-@band.ID" value="@band.ID|@band.Specification.SignificantFigures">@band.Specification.Color</option>
+                            }
+                        }
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Band2" class="control-label">Second Band Color</label>
+                <select id="Band2" name="Band2" class="form-control">
+                    @foreach (var band in Model)
+                    {
+                        if (band.Specification.SignificantFigures != null)
+                        {
+                            if (Convert.ToUInt32(ViewData["BandColor2ID"]) == band.ID)
+                            {
+                                <option id="Band2-@band.ID" value="@band.ID|@band.Specification.SignificantFigures" selected>@band.Specification.Color</option>
+                            }
+                            else
+                            {
+                                <option id="Band2-@band.ID" value="@band.ID|@band.Specification.SignificantFigures">@band.Specification.Color</option>
+                            }
+                        }
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Band3" class="control-label">Third Band Color</label>
+                <select id="Band3" name="Band3" class="form-control">
+                    @foreach (var band in Model)
+                    {
+                        if (band.Specification.Mulitplier != null)
+                        {
+                            if (Convert.ToUInt32(ViewData["BandColor3ID"]) == band.ID)
+                            {
+                                <option id="Band3-@band.ID" value="@band.ID|@band.Specification.Mulitplier" selected>@band.Specification.Color</option>
+                            }
+                            else
+                            {
+                                <option id="Band3-@band.ID" value="@band.ID|@band.Specification.Mulitplier">@band.Specification.Color</option>
+                            }
+                        }
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Band4" class="control-label">Fourth Band Color</label>
+                <select id="Band4" name="Band4" class="form-control">
+                    @foreach (var band in Model)
+                    {
+                        if (band.Specification.Tolerance != null)
+                        {
+                            if (Convert.ToUInt32(ViewData["BandColor4ID"]) == band.ID)
+                            {
+                                <option id="Band4-@band.ID" value="@band.ID|@band.Specification.Tolerance" selected>@band.Specification.Color</option>
+                            }
+                            else
+                            {
+                                <option id="Band4-@band.ID" value="@band.ID|@band.Specification.Tolerance">@band.Specification.Color</option>
+                            }
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="Notes" class="control-label">Notes</label>
+                <textarea id="Notes" name="Notes" class="form-control" rows="14" cols="20">@ViewData["Notes"] </textarea>
+            </div>
+
+            <div class="form-group">
+                <label id="Resistance">Resistance (ohms): @ViewData["Resistance"] </label>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="pad-top">
+                <button type="submit" class="btn btn-success btn-lg margin-right">
+                    <span class="glyphicon glyphicon-save"></span><span class="hidden-xs"> Save</span>
+                </button>
+                <button type="button" class="btn btn-warning btn-lg margin-right" onclick="window.location.href='@Url.Action("ViewDelete")'">
+                    <span class="glyphicon glyphicon-remove"></span><span class="hidden-xs"> Cancel</span>
+                </button>
+                <button type="button" class="btn btn-info btn-lg margin-right" onclick="document.getElementById('Resistance').innerHTML = 'Resistance (ohms): ' + calculate(document.getElementById('Band1').value, document.getElementById('Band2').value, document.getElementById('Band3').value, document.getElementById('Band4').value)">
+                    <span class="glyphicon glyphicon-check"></span><span class="hidden-xs"> Calculate</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

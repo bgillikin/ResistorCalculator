@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "About";
+    ViewBag.Message = "";
+}
+<h2>@ViewBag.Title.</h2>
+<h4>
+    This is my interpretation of the Resistor Calculator coding challenge. It is an ASP.Net MVC application with an underlying web service used
+    to access data about both the band color specifications used for the calculations and the saved entry data about previous resistors.
+    <br /><br />
+    The data is currently presisted in a set of flat files: BandDetails.txt and EntryDetails.txt. These files will need to be copied to the
+    local temp folder under C:\Temp for the apllication functiona as expected. The are attched to the original email with the github link as well
+    as stored under the Core project at .\Core\Data\RawData.
+    <br /><br />
+    The idea being that the calculation can be reclaibrated by adjusting the specifications in the BandDetails.txt file without requiring any code
+    modifications. In a production system this would be replaced with a back-end database for the same purpose.
+</h4>
+<br />
+<br />
+<p>Below is a table of the band color values used to calculate the resistance.</p>
+<br />
+<table class="table hidden-xs hidden-sm">
+    <tr>
+        <th>Color</th>
+        <th>Code</th>
+        <th>Significant Figures</th>
+        <th>Multiplier</th>
+        <th>Tolerance</th>
+    </tr>
+    @foreach (var band in Model)
+    {
+    <tr>
+        <td>@band.Specification.Color</td>
+        <td>@band.Specification.Code</td>
+        <td>@band.Specification.SignificantFigures</td>
+        <td>@band.Specification.Mulitplier</td>
+        <td>@band.Specification.Tolerance</td>
+    </tr>
+    }
+</table>

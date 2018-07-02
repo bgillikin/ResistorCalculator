@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="533ded25-3e31-4d4d-98d1-dad6e05550fc" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:56734/ResistorCalculatorService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ResistorCalculatorService.wsdl" MetadataType="Wsdl" ID="85ddc464-120c-47b2-9b9a-74d75c898080" SourceId="1" SourceUrl="http://localhost:56734/ResistorCalculatorService.svc?wsdl" />
+    <MetadataFile FileName="ResistorCalculatorService.disco" MetadataType="Disco" ID="f9513965-99f7-4c19-a62e-58509eef6f37" SourceId="1" SourceUrl="http://localhost:56734/ResistorCalculatorService.svc?disco" />
+    <MetadataFile FileName="ResistorCalculatorService.xsd" MetadataType="Schema" ID="e1a4549f-f697-4617-8a86-5ea8e8500a37" SourceId="1" SourceUrl="http://localhost:56734/ResistorCalculatorService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ResistorCalculatorService1.xsd" MetadataType="Schema" ID="2bbd0e66-a833-456d-b8fe-1c495166b6cf" SourceId="1" SourceUrl="http://localhost:56734/ResistorCalculatorService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ResistorCalculatorService2.xsd" MetadataType="Schema" ID="3cfe29ed-dcc7-4aee-ae58-8eba53911e97" SourceId="1" SourceUrl="http://localhost:56734/ResistorCalculatorService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ResistorCalculatorService3.xsd" MetadataType="Schema" ID="ff97ed34-129a-4de3-86ab-b8b0f875078b" SourceId="1" SourceUrl="http://localhost:56734/ResistorCalculatorService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

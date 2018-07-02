@@ -1,0 +1,14 @@
+0,None,,,,.2
+1,Pink,PK,,.001,
+2,Silver,SR,,.01,.1
+3,Gold,GD,,.1,.05
+4,Black,BK,0,1,
+5,Brown,BR,1,10,.01
+6,Red,RD,2,10,.02
+7,Orange,OG,3,100,
+8,Yellow,YE,4,1000,.05
+9,Green,GN,5,10000,.005
+10,Blue,BU,6,100000,.0025
+11,Violet,VT,7,1000000,.001
+12,Gray,GY,8,10000000,.0005
+13,White,WH,9,100000000,

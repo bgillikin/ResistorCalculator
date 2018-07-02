@@ -1,0 +1,40 @@
+﻿@model List<ResistorCalculatorWeb.Models.Entry>
+
+@{
+    ViewBag.Title = "Entries";
+}
+
+<h3>@ViewBag.Title</h3>
+
+<table class="table">
+    <tr>
+        <th class="hidden-xs">Date</th>
+        <th>Bands</th>
+        <th>
+            <span class="hidden-xs">Resistance (ohms)</span>
+            <span class="hidden-sm hidden-md hidden-lg">ohms</span>
+        </th>
+        <th>&nbsp;</th>
+    </tr>
+    @foreach (var entry in Model)
+    {
+        <tr>
+            <td class="hidden-xs">@entry.EntryData.Date.ToString("MM/dd/yyyy")</td>
+            <td>
+                <span class="hidden-xs">@entry.Band1.Specification.Color|@entry.Band2.Specification.Color|@entry.Band3.Specification.Color|@entry.Band4.Specification.Color</span>
+                <span class="hidden-sm hidden-md hidden-lg">@entry.Band1.Specification.Code|@entry.Band2.Specification.Code|@entry.Band3.Specification.Code|@entry.Band4.Specification.Code</span>
+            </td>
+            <td>@entry.EntryData.Resistance</td>
+            <td>
+                <div class="pull-right">
+                    <button type="button" class="btn btn-warning btn-sm margin-right" onclick="window.location.href='@Url.Action("AddEdit", new { id = entry.ID })'">
+                        <span class="glyphicon glyphicon-edit"></span><span class="hidden-xs"> Edit</span>
+                    </button>
+                    <button type="button" class="btn btn-danger btn-sm" onclick="deleteConfirm(@entry.ID)">
+                        <span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> Delete</span>
+                    </button>
+                </div>
+            </td>
+        </tr>
+    }
+</table>

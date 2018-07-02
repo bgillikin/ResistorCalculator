@@ -1,0 +1,93 @@
+﻿@{ 
+    var applicationName = "Resistor Calculator";
+}
+
+@helper GetAddEntryButtonVisibility()
+{
+    if ((string)ViewContext.RouteData.Values["controller"] == "Entries" && 
+        (string)ViewContext.RouteData.Values["action"] == "AddEdit")
+    {
+        <text>hidden</text>
+    }
+    else
+    {
+        <text>visible</text>
+    }
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@applicationName</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="~/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Secular+One" rel="stylesheet">
+    <link href="~/Content/site.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Resistor Calculator", "ViewDelete", "Entries", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                <a href="@Url.Action("AddEdit", "Entries")" style="visibility: @GetAddEntryButtonVisibility()"
+                   class="btn btn-primary navbar-btn navbar-right">
+                    <span class="glyphicon glyphicon-plus"></span> Add
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <footer>
+            <img src="../../img/circuit.png" height="64" width="64" />
+            <p>&copy; @DateTime.Now.Year @applicationName, All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    
+    <script>
+        // calculate the ohms
+        function calculate(band1, band2, band3, band4) {
+            // seperate the defined values for each band from their ids
+            var first = band1.split("|")[1];
+            var second = band2.split("|")[1];
+            var multiplier = band3.split("|")[1];
+            var tolerance = band4.split("|")[1];
+
+            // calculate the resistance and its range from the tolerance
+            var rootVal = parseFloat(first + second) * parseFloat(multiplier);
+            var minVal = rootVal * (1 - parseFloat(tolerance));
+            var maxVal = rootVal * (1 + parseFloat(tolerance));
+            var rangeText = minVal.toString() + " - " + maxVal.toString();
+
+            return rangeText;
+        }
+
+        // prompt befor delete
+        function deleteConfirm(entryID) {
+            var url = '/Entries/ViewDelete/' + entryID;
+            var ans = confirm("Are you sure you wish to delete the selected entry?");
+            if (ans == true) {
+                window.location.href = url;
+            }
+        }    
+    </script>
+</body>
+</html>
